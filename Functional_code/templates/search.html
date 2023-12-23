@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH</title>
+    <style>
+       .infor {
+           margin-top: 35px;
+           height: 40px;
+           border-bottom: 2px solid #e2dcdc;
+       }
+
+       .inf1 {
+           font-weight: bold;
+           font-size: 16px;
+           text-align: center;
+       }
+
+       .logo {
+           margin-top: 30px;
+           margin-left: 60px;
+           font-family: "Gilroy-ExtraBold",
+           sans-serif;
+           line-height: 70px;
+           text-align: center;
+           font-size: 40px;
+           display: inline-block;
+           background-color: rgb(255, 254, 254, 0);
+           height: 70px;
+           font-weight: 1000;
+       }
+       .login {
+        /*一个完整的注册边框*/
+           position: absolute;
+           left: 50%;
+           top: 50%;
+           margin-top: -280px;
+           margin-left: -210px;
+           width: 400px;
+           height: 530px;
+           background: #FFFFFF;
+           box-shadow: 0 0 10px 0 rgba(0, 33, 79, 0.11);
+           border-radius: 6px;
+       }
+       .ul {
+           margin-left: 60px;
+           margin-top: 25px;
+           width: 320px;
+           padding-left: 0px;
+       }
+       .sv1 {
+           position: absolute;
+           left: 20px;
+           top: 207px;
+       }
+       .li {
+           position: relative;
+           height: 40px;
+           width: 340px;
+           margin-bottom: 26px;
+           list-style-type: none;
+           list-style: none;
+           vertical-align: bottom;
+       }
+       .input {
+           background: #F6F6F6;
+           border: 1px solid #EDEDED;
+           width: 300px;
+           padding-left: 13px;
+           height: 40px;
+           line-height: 40px;
+           font-size: 14px;
+           color: #3D4059;
+           box-sizing: border-box;
+       }
+
+       .log {
+           margin-left: 45px;
+           margin-right: 45px;
+           height: 40px;
+           width: 311px;
+           background-color: rgb(0, 162, 255);
+           line-height: 40px;
+           text-align: center;
+       }
+       a {
+           text-decoration: none;
+           color: #fefefe;
+       }
+       a:hover {
+           color: #000;
+       }
+       .way {
+           margin-top: 90px;
+           height: 10px;
+           border-bottom: 2px solid #e2dcdc;
+       }
+       .other {
+           margin-left: 15px;
+           display: inline;
+       }
+
+       .pro {
+           color: #716b6b;
+           font-weight: 50;
+           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+           margin-top: 30px;
+           margin-left: 50px;
+       }
+       .bin {
+           position: absolute;
+           margin-left: -15px;
+           border: none;
+           height: 40px;
+           width: 311px;
+           background: rgb(0, 162, 255);
+           display: block;
+           transition: all 0.1s linear 0s;
+       }
+
+       .bin:hover {
+           background: #000;
+           color: aliceblue;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="back">
+        <div class="login">
+
+            <div class="main">
+                <div class="logo">
+                    TODAY NEWS
+                </div>
+
+                <div class="infor">
+                    <div class="inf1">TO SEARCH</div>
+                </div>
+
+                <div class="switch">
+                    <form name="search" action="/search/" method="POST">
+
+                        <ul class="ul">
+                            <svg class="sv1" t="1702537510678" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4226" width="28" height="28"><path d="M448 768c176.725333 0 320-143.274667 320-320 0-176.725333-143.274667-320-320-320-176.725333 0-320 143.274667-320 320 0 176.725333 143.274667 320 320 320z m0 42.666667c-200.298667 0-362.666667-162.368-362.666667-362.666667S247.701333 85.333333 448 85.333333s362.666667 162.368 362.666667 362.666667-162.368 362.666667-362.666667 362.666667z m304.917333-27.584a21.333333 21.333333 0 0 1 30.165334-30.165334l150.848 150.848a21.333333 21.333333 0 0 1-30.165334 30.165334l-150.848-150.826667z" fill="#3D3D3D" p-id="4227"></path></svg>
+
+                            <li class="li">
+                                {% if key %}
+                                <input class="input" type="text" placeholder="Please enter your query" id="input1" name="key_word" value="{{key}}">
+                                {% else %}
+                                <input class="input" type="text" placeholder="Please enter your query" id="input1" name="key_word">
+                                {% endif %}
+                            </li>
+                            <input type="submit" value="Search" class='log bin a'>
+
+
+                        </ul>
+                    </form>
+                </div>
+
+
+
+                <div class="way">
+                    <span
+                        style="margin-left: 120px; background-color: rgb(255, 255, 255); font-weight: 50; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Other sorting  methods</span>
+                </div>
+
+                <div style="margin-top: 40px; margin-left: 115px;">
+
+                    <div class="other"><a href="#"><svg t="1680094092702" class="icon" viewBox="0 0 1024 1024"
+                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4922" width="32" height="32">
+                                <path
+                                    d="M666.122449 909.061224c-10.44898 0-21.420408-1.044898-31.869388-2.612244-39.183673-4.702041-74.710204-23.510204-100.832653-53.289796-13.583673 5.22449-28.212245 5.22449-41.795918 0-21.420408 28.212245-61.64898 48.065306-108.669388 53.289796-66.35102 7.314286-138.44898-11.493878-144.718367-55.379592-5.22449-34.481633 37.093878-61.126531 81.502041-75.755102-25.6-28.212245-43.363265-63.738776-51.2-101.355102l-0.522449 0.522449c-25.077551 31.346939-41.795918 50.155102-61.126531 50.155102-2.089796 0-4.179592-0.522449-6.269388-1.044898-7.314286-2.612245-13.061224-8.881633-17.240816-18.808164-16.195918-34.481633-9.404082-100.310204 15.15102-150.465306 0 0 0-0.522449 0.522449-0.522449 12.538776-22.465306 27.689796-43.363265 45.453061-62.171428-6.269388-11.493878-10.44898-24.032653-12.016326-37.093878v-3.134694c0.522449-19.330612 10.44898-37.093878 26.644898-47.542857-10.971429-73.142857 9.926531-147.330612 58.514286-203.232653 49.110204-56.946939 120.163265-88.816327 194.873469-86.204081h4.702041c65.306122 0 129.567347 26.122449 177.110204 72.097959 49.110204 47.542857 76.8 112.326531 77.844898 180.767347v7.314285c0.522449 9.926531 0 19.330612-1.044898 29.257143 14.106122 8.881633 21.420408 20.37551 21.420408 48.065306 0 13.583673-1.044898 27.689796-9.926531 36.04898 13.061224 17.763265 28.734694 42.840816 41.27347 62.693877l2.612245 4.179592c20.37551 32.391837 23.510204 74.187755 22.987755 96.130613 0 17.240816-2.089796 58.514286-18.285714 70.530612-3.657143 2.612245-7.314286 3.657143-12.016327 3.657143h-4.179592c-26.122449 0-41.273469-23.510204-57.991837-48.587755l-1.567347-2.089796c-8.881633 36.571429-26.122449 71.053061-50.677551 99.265306 27.167347 9.404082 83.069388 31.346939 75.755103 73.142857-5.746939 35.526531-55.902041 62.171429-114.416327 62.171428z m-388.702041-63.738775z m250.253061-11.493878z m276.375511-140.016326z m-47.020409-235.102041z"
+                                    fill="#7BD4EF" p-id="4923"></path>
+                            </svg></a>
+                    </div>
+
+
+                    <div class="other">
+                        <a href="#"><svg t="1680094160918" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="5917" width="32" height="32">
+                                <path
+                                    d="M985.742 749.936c0 130.864-106.178 236.964-237.17 236.964H274.298c-130.954 0-237.092-106.102-237.092-236.964V276.018c0-130.902 106.138-236.966 237.092-236.966h474.274c130.992 0 237.17 106.064 237.17 236.966v473.918z"
+                                    fill="#235B9E" p-id="5918"></path>
+                                <path
+                                    d="M432.434 809.176h118.568V512.984h87.996l10.808-118.482h-94.252V347.14c0-23.102 15.398-28.464 26.208-28.464h66.542v-101.512l-91.59-0.384c-101.662 0-124.782 75.71-124.782 124.19v53.534H373.14v118.482h59.294v296.19z"
+                                    fill="#FFFFFF" p-id="5919"></path>
+                                <path
+                                    d="M432.434 809.176h118.568V512.984h87.996l10.808-118.482h-94.252V347.14c0-23.102 15.398-28.464 26.208-28.464h66.542v-101.512l-91.59-0.384c-101.662 0-124.782 75.71-124.782 124.19v53.534H373.14v118.482h59.294v296.19z"
+                                    fill="#FFFFFF" p-id="5920"></path>
+                                <path
+                                    d="M556.712 216.778l91.59 0.384v101.512H581.76c-10.808 0-26.208 5.362-26.208 28.464v47.362h94.252l-10.808 118.482H551v296.192h-118.568V512.982H373.14V394.5h58.792v-53.534c0-48.478 23.118-124.188 124.78-124.188m0-19.754c-64.452 0-98.87 28.234-116.394 51.92-24.486 33.094-28.142 71.862-28.142 92.024v33.78H373.14c-10.91 0-19.754 8.844-19.754 19.754v118.482c0 10.91 8.844 19.754 19.754 19.754h39.54v276.438c0 10.91 8.844 19.754 19.754 19.754h118.568c10.91 0 19.754-8.844 19.754-19.754V532.738h68.242a19.756 19.756 0 0 0 19.672-17.96l10.808-118.482a19.76 19.76 0 0 0-19.672-21.55h-74.498v-27.608c0-4.532 0.948-6.908 1.758-7.568 0.7-0.568 2.422-1.142 4.696-1.142h66.542c10.91 0 19.754-8.844 19.754-19.754v-101.512a19.752 19.752 0 0 0-19.67-19.754l-91.59-0.384h-0.086z"
+                                    fill="#1A4477" p-id="5921"></path>
+                                <path
+                                    d="M728.078 956.122H294.83c-124.896 0-226.506-101.636-226.506-226.566V296.358c0-124.908 101.61-226.526 226.506-226.526h433.248c124.918 0 226.544 101.62 226.544 226.526v433.198c0.002 124.928-101.626 226.566-226.544 226.566zM294.83 89.636c-113.976 0-206.702 92.734-206.702 206.72v433.198c0 114.008 92.726 206.762 206.702 206.762h433.248c113.996 0 206.74-92.754 206.74-206.762V296.358c0-113.986-92.744-206.72-206.74-206.72H294.83z"
+                                    fill="#1A4477" p-id="5922"></path>
+                            </svg></a>
+                    </div>
+
+                    <div class="other">
+                        <a href="#">
+                            <svg t="1680094612620" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="6363" width="32" height="32">
+                                <path
+                                    d="M881 442.4H519.7v148.5h206.4c-8.9 48-35.9 88.6-76.6 115.8-34.4 23-78.3 36.6-129.9 36.6-99.9 0-184.4-67.5-214.6-158.2-7.6-23-12-47.6-12-72.9s4.4-49.9 12-72.9c30.3-90.6 114.8-158.1 214.7-158.1 56.3 0 106.8 19.4 146.6 57.4l110-110.1c-66.5-62-153.2-100-256.6-100-149.9 0-279.6 86-342.7 211.4-26 51.8-40.8 110.4-40.8 172.4S151 632.8 177 684.6C240.1 810 369.8 896 519.7 896c103.6 0 190.4-34.4 253.8-93 72.5-66.8 114.4-165.2 114.4-282.1 0-27.2-2.4-53.3-6.9-78.5z"
+                                    fill="#1296DB" p-id="6364"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="pro">
+                    <span>If you have any problems,</span><a chref="#" style="color: black; font-weight: 500;">contact customer.</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>

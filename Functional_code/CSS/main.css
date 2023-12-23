@@ -1,0 +1,157 @@
+.body {}
+
+.back {
+    background-image: url(../../img/po3.jpg);
+    background-position: center;
+    width: 1500px;
+    height: 700px;
+}
+
+.main {}
+
+.infor {
+    margin-top: 35px;
+    height: 40px;
+    border-bottom: 2px solid #e2dcdc;
+}
+
+.inf1 {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-left: 60px;
+    font-family: "Gilroy-ExtraBold",
+        sans-serif;
+    line-height: 70px;
+    text-align: center;
+    font-size: 40px;
+    display: inline-block;
+    background-color: rgb(255, 254, 254, 0);
+    height: 70px;
+    font-weight: 1000;
+
+}
+
+.login {
+    /*一个完整的注册边框*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -280px;
+    margin-left: -210px;
+    width: 400px;
+    height: 530px;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0, 33, 79, 0.11);
+    border-radius: 6px;
+}
+
+.switch {}
+
+.ul {
+    margin-left: 60px;
+    margin-top: 25px;
+    width: 320px;
+    padding-left: 0px;
+}
+
+.sv1 {
+    position: absolute;
+    left: 20px;
+    top: 207px;
+}
+
+
+.li {
+    position: relative;
+    height: 40px;
+    width: 340px;
+    margin-bottom: 26px;
+    list-style-type: none;
+    list-style: none;
+    vertical-align: bottom;
+
+}
+
+.input {
+    background: #F6F6F6;
+    border: 1px solid #EDEDED;
+    width: 300px;
+    padding-left: 13px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #3D4059;
+    box-sizing: border-box;
+}
+
+.log {
+    margin-left: 45px;
+    margin-right: 45px;
+    height: 40px;
+    width: 311px;
+    background-color: rgb(0, 162, 255);
+    line-height: 40px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+
+a:hover {
+    color: #000;
+}
+
+.forget {
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-top: 10px;
+    height: 20px;
+    width: 311px;
+    font-size: 8px;
+}
+
+.gai {
+    color: #716b6b;
+    position: relative;
+    right: -263px;
+}
+
+.way {
+    margin-top: 25px;
+    height: 10px;
+    border-bottom: 2px solid #e2dcdc;
+}
+
+.other {
+    margin-left: 15px;
+    display: inline;
+}
+
+.pro {
+    color: #716b6b;
+    font-weight: 50;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.bin {
+    height: 40px;
+    width: 311px;
+    background: rgb(0, 162, 255);
+    display: block;
+    transition: all 0.1s linear 0s;
+}
+
+.bin:hover {
+    background: #000;
+    color: aliceblue;
+}

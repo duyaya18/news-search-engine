@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>News Search Engine</title>
+    <style type="text/css">
+        div#doc {width:800px}
+    .pagination-page-info {
+        padding: .6em;
+        padding-left: 0;
+        width: 40em;
+        margin: .5em;
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .pagination-page-info b {
+        color: black;
+        background: #6aa6ed;
+        padding-left: 2px;
+        font-size: 150%;
+    }
+    .button_s{
+        background: #0caff3;
+        color: #000;
+        display: inline;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        width: 150px;
+        font-weight: 800;
+        border-radius: 25px
+        border: 1px solid #EDEDED;
+    }
+    .input{
+        background: #F6F6F6;
+        border: 1px solid #EDEDED;
+        width: 300px;
+        padding-left: 13px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #3D4059;
+        box-sizing: border-box;
+    }
+    .top{
+        margin-left: 530px;
+        margin-bottom: 20px;
+    }
+    .title{
+        color:hsl(184,80%,25%);text-shadow:0 0 1px currentColor,/*highlight*/-1px -1px 1px hsl(184,80%,50%),0 -1px 1px hsl(184,80%,55%),1px -1px 1px hsl(184,80%,50%),/*light shadow*/1px 1px 1px hsl(184,80%,10%),0 1px 1px hsl(184,80%,10%),-1px 1px 1px hsl(184,80%,10%),/*outline*/-2px -2px 1px hsl(184,80%,15%),-1px -2px 1px hsl(184,80%,15%),0 -2px 1px hsl(184,80%,15%),1px -2px 1px hsl(184,80%,15%),2px -2px 1px hsl(184,80%,15%),2px -1px 1px hsl(184,80%,15%),2px 0 1px hsl(184,80%,15%),2px 1px 1px hsl(184,80%,15%),-2px 0 1px hsl(184,80%,15%),-2px -1px 1px hsl(184,80%,15%),-2px 1px 1px hsl(184,80%,15%),/*dark shadow*/2px 2px 2px hsl(184,80%,5%),1px 2px 2px hsl(184,80%,5%),0 2px 2px hsl(184,80%,5%),-1px 2px 2px hsl(184,80%,5%),-2px 2px 2px hsl(184,80%,5%);
+        margin-left: 500px;
+        font-size: 70px;
+    }
+
+        .niceButton3 {
+        background-color: #1795bb;
+        border-radius: 12px;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+      .niceButton3:hover {
+        background-color: #fff;
+        color: #1795bb;
+        border: 1px solid #ccc;
+      }
+      .border4 {
+          margin-left: 100px;
+        background-color: white; /* 默认背景颜色 */
+        transition: background-color 0.1s ease-in-out; /* 背景颜色变化的时间和方式 */
+     }
+
+     .border4:hover {
+       background-color: lightgray; /* 悬停时的背景颜色 */
+      }
+     .select{
+         margin-left: 100px;
+     }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header" >
+            <div class="title">TODAY NEWS</div>
+            <form name="search" action="/search/" method="POST">
+                <div class="top">
+                    {% if key %}
+                        <input type="text" name="key_word" value="{{key}}" class="input">
+                    {% else %}
+                        <input type="text" name="key_word" class="input">
+                    {% endif %}
+                    <button type="submit" class='niceButton3'>Search</button>
+                </div>
+            </form>
+        </div>
+        <hr/>
+
+        <div id="select" class="select">
+            <ul>
+                <form name="search" action="/search/{{key}}/" method="POST">
+                     <input {{checked[0]}} type="radio" name="order" id="r1" value="0" /> <label for="r1">相关度</label>
+                     <input {{checked[1]}} type="radio" name="order" id="r2" value="1" /> <label for="r2">时间</label>
+                     <input {{checked[2]}} type="radio" name="order" id="r3" value="2" /> <label for="r3">热度</label>
+                     <input type="submit" value="ok">
+                </form>
+            </ul>
+        </div>
+
+        {% if error%}
+
+            {% for doc in docs%}
+            <div id="doc" class="border4">
+                <ul id="navigation" >
+                    <p><big><a href="/search/{{doc.id}}/" target="_blank">{{doc.title}}</a></big></p>
+                    <p class = "text">{{doc.time}}<br/>{{doc.snippet}}
+                    </p>
+                    <a href="{{ doc.url }}" target="_blank">{{doc.url}}</a>
+                </ul>
+            </div>
+            <br/>
+            {% endfor %}
+
+        {% block next %}
+        <ul>
+            {% for i in page %}
+                <a href="/search1/page/{{i}}/">{{i}}</a>&nbsp;
+            {% endfor %}
+        </ul>
+        {% endblock %}
+        {% else %}
+            <p>对不起，没有您搜索的网页！</p>
+        {% endif %}
+		
+		<div id="footer">
+			<hr>
+			<script type="text/javascript">
+			var today = new Date();
+			var year = today.getFullYear();
+			document.write(year)
+			</script>
+        </div>
+		
+    </div>
+    <div>搜索关键词</div>
+    {% for i in key_list %}
+    <div class="key_li" style="display: inline-block;color:red;">{{i}}</div>
+    {% endfor %}
+
+<script>
+    var divs = document.querySelectorAll("a"); // 获取所有的元素
+    var temp = document.querySelectorAll(".key_li");
+    var content = document.querySelectorAll(".text");
+    var list1 = []
+    for(var i = 0;i<temp.length;i++){
+        list1.push(temp[i].innerText)
+    }
+    var str = list1.join('|')
+    for (var i = 0; i < divs.length; i++) { // 遍历所有的div元素
+       var text = divs[i]; // 获取当前的div元素
+        text.innerHTML = text.innerText.replace(new RegExp(str, 'g'), function(match) { // 替换匹配到的字符串
+  return `<span style="color:red;">${match}</span>`; // 返回带有红色样式的<span>标签
+        }); // 通过正则全局匹配关键词，查出来的文字进行高亮替换
+    }
+    for (var i = 0; i < content.length; i++) { // 遍历所有的div元素
+       var text = content[i]; // 获取当前的div元素
+        text.innerHTML = text.innerText.replace(new RegExp(str, 'g'), function(match) { // 替换匹配到的字符串
+  return `<span style="color:red;">${match}</span>`; // 返回带有红色样式的<span>标签
+        }); // 通过正则全局匹配关键词，查出来的文字进行高亮替换
+    }
+
+    </script>
+
+</body>
+
+
+
+</html>
